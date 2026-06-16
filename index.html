@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Mujeeb — Trusted General Physician | Family Medicine</title>
+<meta name="description" content="Dr. Mujeeb is an experienced General Physician offering consultations, chronic disease management, preventive check-ups and online consultations. Book an appointment today.">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Font Awesome (real icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary:   { light:'#93c5fd', DEFAULT:'#2563eb', dark:'#1d4ed8', darker:'#1e3a8a' },
+          accent:    { DEFAULT:'#f97316', dark:'#ea580c' },
+          ink:       '#0b1f3a',
+          mist:      '#eff6ff',
+        },
+        fontFamily: { sans: ['"Plus Jakarta Sans"','system-ui','-apple-system','Segoe UI','sans-serif'] },
+        boxShadow: {
+          soft:  '0 10px 30px rgba(37,99,235,.12)',
+          card:  '0 18px 40px -12px rgba(37,99,235,.20)',
+          glow:  '0 8px 24px rgba(0,0,0,.25)',
+        },
+        keyframes: {
+          float:     { '0%,100%':{transform:'translateY(0)'}, '50%':{transform:'translateY(-14px)'} },
+          floaty:    { '0%,100%':{transform:'translateY(0)'}, '50%':{transform:'translateY(-8px)'} },
+          pulseSoft: { '0%,100%':{transform:'scale(1)'}, '50%':{transform:'scale(1.06)'} },
+        },
+        animation: {
+          float:     'float 5s ease-in-out infinite',
+          floaty:    'floaty 4s ease-in-out infinite',
+          pulseSoft: 'pulseSoft 2s ease-in-out infinite',
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  html{scroll-behavior:smooth}
+  body{-webkit-font-smoothing:antialiased}
+
+  /* Scroll-reveal */
+  .reveal{opacity:0}
+  .reveal.in{animation:fadeUp .8s ease forwards}
+  .reveal.left.in{animation:fadeLeft .8s ease forwards}
+  .reveal.right.in{animation:fadeRight .8s ease forwards}
+  .reveal.zoom.in{animation:zoomIn .7s ease forwards}
+  .reveal.d1.in{animation-delay:.12s}
+  .reveal.d2.in{animation-delay:.24s}
+  .reveal.d3.in{animation-delay:.36s}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeLeft{from{opacity:0;transform:translateX(-50px)}to{opacity:1;transform:translateX(0)}}
+  @keyframes fadeRight{from{opacity:0;transform:translateX(50px)}to{opacity:1;transform:translateX(0)}}
+  @keyframes zoomIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+
+  /* Nav underline */
+  .nav-link{position:relative}
+  .nav-link::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:#2563eb;transition:.25s}
+  .nav-link:hover::after{width:100%}
+
+  /* Hero background */
+  .hero-bg{ background:linear-gradient(125deg,#1e3a8a 0%,#2563eb 55%,#1d4ed8 100%); }
+</style>
+</head>
+<body class="font-sans text-slate-600 bg-white overflow-x-hidden">
+
+<!-- ===== Top bar ===== -->
+<div class="bg-primary-darker text-blue-100 text-sm">
+  <div class="w-[92%] max-w-[1180px] mx-auto flex flex-wrap items-center justify-between gap-2 py-2.5">
+    <div class="hidden md:flex flex-wrap gap-x-6 gap-y-1">
+      <span><i class="fa-solid fa-phone text-primary-light mr-1.5"></i>+92 311 7654321</span>
+      <span><i class="fa-solid fa-envelope text-primary-light mr-1.5"></i>contact@drmujeeb.pk</span>
+      <span><i class="fa-solid fa-location-dot text-primary-light mr-1.5"></i>University Road, Faisalabad, Pakistan</span>
+    </div>
+    <div class="flex items-center gap-1 ml-auto">
+      <span class="mr-2"><i class="fa-solid fa-clock text-primary-light mr-1.5"></i>Mon–Sat: 5:00 – 9:00 PM</span>
+      <a href="#" class="w-8 h-8 grid place-items-center rounded-full hover:bg-white/15 hover:-translate-y-0.5 transition"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" class="w-8 h-8 grid place-items-center rounded-full hover:bg-white/15 hover:-translate-y-0.5 transition"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="w-8 h-8 grid place-items-center rounded-full hover:bg-white/15 hover:-translate-y-0.5 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Header / nav ===== -->
+<header id="header" class="sticky top-0 z-[100] bg-white/95 backdrop-blur shadow-[0_2px_14px_rgba(0,0,0,.06)] transition">
+  <nav class="w-[92%] max-w-[1180px] mx-auto flex items-center justify-between py-4">
+    <a href="#home" class="group flex items-center gap-2.5 text-2xl font-extrabold text-ink">
+      <span class="w-11 h-11 grid place-items-center rounded-xl text-white text-xl bg-gradient-to-br from-primary to-primary-light transition-transform duration-500 group-hover:rotate-[360deg]">
+        <i class="fa-solid fa-user-doctor"></i>
+      </span>
+      Dr.<span class="text-primary">&nbsp;Mujeeb</span>
+    </a>
+
+    <ul id="navLinks" class="hidden lg:flex items-center gap-7 list-none">
+      <li><a href="#home"     class="nav-link font-semibold text-ink hover:text-primary transition">Home</a></li>
+      <li><a href="#about"    class="nav-link font-semibold text-ink hover:text-primary transition">About</a></li>
+      <li><a href="#services" class="nav-link font-semibold text-ink hover:text-primary transition">Services</a></li>
+      <li><a href="#why"      class="nav-link font-semibold text-ink hover:text-primary transition">Why Me</a></li>
+      <li><a href="#contact"  class="nav-link font-semibold text-ink hover:text-primary transition">Contact</a></li>
+      <li><a href="#contact" class="inline-block px-5 py-2.5 rounded-full font-semibold text-white bg-primary hover:bg-primary-dark hover:-translate-y-0.5 hover:shadow-soft transition">Book Appointment</a></li>
+    </ul>
+
+    <button id="menuToggle" class="lg:hidden text-2xl text-ink" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-slate-100 bg-white">
+    <div class="w-[92%] max-w-[1180px] mx-auto flex flex-col py-3">
+      <a href="#home"     class="py-2.5 font-semibold text-ink hover:text-primary">Home</a>
+      <a href="#about"    class="py-2.5 font-semibold text-ink hover:text-primary">About</a>
+      <a href="#services" class="py-2.5 font-semibold text-ink hover:text-primary">Services</a>
+      <a href="#why"      class="py-2.5 font-semibold text-ink hover:text-primary">Why Me</a>
+      <a href="#contact"  class="py-2.5 font-semibold text-ink hover:text-primary">Contact</a>
+      <a href="#contact" class="mt-2 text-center px-5 py-3 rounded-full font-semibold text-white bg-primary hover:bg-primary-dark transition">Book Appointment</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section id="home" class="hero-bg relative text-white pt-16 pb-32 lg:pt-20 overflow-hidden">
+  <!-- decorative blurred blobs -->
+  <div class="pointer-events-none absolute -top-24 -left-24 w-96 h-96 rounded-full bg-primary-light/20 blur-3xl"></div>
+  <div class="pointer-events-none absolute bottom-0 right-1/3 w-72 h-72 rounded-full bg-accent/10 blur-3xl"></div>
+
+  <div class="relative w-[92%] max-w-[1180px] mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <!-- copy -->
+    <div class="max-w-xl">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-white/10 ring-1 ring-white/20 text-sm font-semibold backdrop-blur">
+        <i class="fa-solid fa-stethoscope text-accent"></i> MBBS, FCPS — General Physician
+      </span>
+      <h1 class="text-4xl sm:text-5xl lg:text-[52px] font-extrabold leading-[1.1] mb-5 [animation:fadeUp_1s_ease_both]">
+        Compassionate Care from<br>
+        <span class="bg-gradient-to-r from-white to-primary-light bg-clip-text text-transparent">a Doctor Who Listens</span>
+      </h1>
+      <p class="text-lg sm:text-xl max-w-lg mb-8 text-blue-50/90 [animation:fadeUp_1s_ease_.25s_both]">
+        Hi, I'm <b class="text-white">Dr. Mujeeb</b> — a General Physician with 15+ years of experience providing thorough, patient-first care for you and your family, both in-clinic and online.
+      </p>
+      <div class="flex flex-wrap gap-4 [animation:fadeUp_1s_ease_.5s_both]">
+        <a href="#contact" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white bg-accent hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(249,115,22,.45)] transition">
+          <i class="fa-solid fa-calendar-check"></i> Book an Appointment
+        </a>
+        <a href="#services" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white ring-2 ring-white/80 hover:bg-white hover:text-primary-dark transition">
+          View Services
+        </a>
+      </div>
+
+      <!-- trust chips -->
+      <div class="flex flex-wrap gap-x-7 gap-y-3 mt-10 text-sm text-blue-50/90 [animation:fadeUp_1s_ease_.7s_both]">
+        <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-check text-accent"></i> 15+ Years Experience</span>
+        <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-check text-accent"></i> 20,000+ Patients Treated</span>
+        <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-check text-accent"></i> In-Clinic &amp; Online</span>
+      </div>
+    </div>
+
+    <!-- portrait -->
+    <div class="relative mx-auto w-full max-w-sm lg:max-w-md [animation:zoomIn_.9s_ease_both]">
+      <div class="absolute inset-0 -m-3 rounded-[2rem] bg-white/10 blur-2xl"></div>
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=900&q=80" alt="Dr. Mujeeb, General Physician" class="rounded-[2rem] shadow-2xl ring-4 ring-white/20 w-full aspect-[4/5] object-cover object-top">
+        <!-- available chip -->
+        <span class="absolute top-4 right-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 text-emerald-600 text-sm font-semibold shadow">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Available Today
+        </span>
+        <!-- experience badge -->
+        <div class="absolute -bottom-5 -left-4 sm:-left-6 bg-white rounded-2xl px-5 py-4 shadow-xl flex items-center gap-3 animate-floaty">
+          <span class="w-11 h-11 grid place-items-center rounded-xl bg-accent/10 text-accent text-xl"><i class="fa-solid fa-award"></i></span>
+          <div><b class="block text-ink text-xl leading-none">15+ Yrs</b><small class="text-slate-500">Experience</small></div>
+        </div>
+        <!-- rating badge -->
+        <div class="absolute -top-4 -left-4 sm:-left-6 bg-white rounded-2xl px-4 py-3 shadow-xl hidden sm:flex items-center gap-2">
+          <span class="text-accent text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+          <div class="leading-none"><b class="text-ink">4.9</b> <small class="text-slate-500">(500+)</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Feature strip ===== -->
+<div class="relative z-[5] -mt-16">
+  <div class="w-[92%] max-w-[1180px] mx-auto grid md:grid-cols-3 gap-6">
+    <div class="reveal zoom group bg-white rounded-2xl p-8 text-center shadow-soft hover:-translate-y-2.5 transition duration-300">
+      <div class="w-[70px] h-[70px] mx-auto mb-4 grid place-items-center rounded-full text-3xl bg-mist text-primary transition duration-300 group-hover:bg-primary group-hover:text-white group-hover:[transform:rotateY(180deg)]">
+        <i class="fa-solid fa-calendar-check"></i>
+      </div>
+      <h3 class="text-xl font-bold text-ink mb-2">Same-Day Appointments</h3>
+      <p class="text-slate-500 text-[15px]">Flexible same-day and online booking so you can be seen quickly when it matters.</p>
+    </div>
+    <div class="reveal zoom d1 group bg-white rounded-2xl p-8 text-center shadow-soft hover:-translate-y-2.5 transition duration-300">
+      <div class="w-[70px] h-[70px] mx-auto mb-4 grid place-items-center rounded-full text-3xl bg-mist text-primary transition duration-300 group-hover:bg-primary group-hover:text-white group-hover:[transform:rotateY(180deg)]">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+      </div>
+      <h3 class="text-xl font-bold text-ink mb-2">Personalized Attention</h3>
+      <p class="text-slate-500 text-[15px]">Unhurried consultations where every concern is heard and clearly explained.</p>
+    </div>
+    <div class="reveal zoom d2 group bg-white rounded-2xl p-8 text-center shadow-soft hover:-translate-y-2.5 transition duration-300">
+      <div class="w-[70px] h-[70px] mx-auto mb-4 grid place-items-center rounded-full text-3xl bg-mist text-primary transition duration-300 group-hover:bg-primary group-hover:text-white group-hover:[transform:rotateY(180deg)]">
+        <i class="fa-solid fa-laptop-medical"></i>
+      </div>
+      <h3 class="text-xl font-bold text-ink mb-2">Online Consultations</h3>
+      <p class="text-slate-500 text-[15px]">Convenient video consultations and follow-ups from the comfort of home.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== About ===== -->
+<section id="about" class="py-20">
+  <div class="w-[92%] max-w-[1180px] mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <div class="reveal left relative">
+      <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=900&q=80" alt="Dr. Mujeeb consulting a patient" class="rounded-2xl shadow-card w-full">
+      <div class="absolute -bottom-6 -right-3 bg-accent text-white px-6 py-4 rounded-2xl font-extrabold shadow-[0_10px_25px_rgba(249,115,22,.4)] animate-floaty text-center">
+        <span class="block text-3xl leading-none">20k+</span>Patients Cared For
+      </div>
+    </div>
+    <div class="reveal right">
+      <span class="text-primary font-bold tracking-[2px] uppercase text-[13px]">About Dr. Mujeeb</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-ink leading-tight mt-2 mb-4">Your Trusted Family Physician</h2>
+      <p class="text-slate-500 mb-4">Dr. Mujeeb is a dedicated General Physician with over 15 years of experience caring for patients of all ages. He believes good medicine starts with truly listening — taking the time to understand each patient before recommending a clear, practical treatment plan.</p>
+      <p class="text-slate-500 mb-5">From everyday illnesses to long-term conditions like diabetes and high blood pressure, his goal is simple: help you feel better and stay healthy, with honest advice you can trust.</p>
+      <ul class="space-y-2.5 mb-7">
+        <li class="flex items-start gap-3 font-medium text-slate-700"><i class="fa-solid fa-circle-check text-primary mt-1"></i>MBBS, FCPS (Family Medicine) — fully licensed practitioner</li>
+        <li class="flex items-start gap-3 font-medium text-slate-700"><i class="fa-solid fa-circle-check text-primary mt-1"></i>15+ years of clinical &amp; primary-care experience</li>
+        <li class="flex items-start gap-3 font-medium text-slate-700"><i class="fa-solid fa-circle-check text-primary mt-1"></i>Special focus on diabetes &amp; hypertension management</li>
+        <li class="flex items-start gap-3 font-medium text-slate-700"><i class="fa-solid fa-circle-check text-primary mt-1"></i>Patient-first, compassionate approach to every visit</li>
+      </ul>
+      <a href="#contact" class="inline-block px-7 py-3.5 rounded-full font-semibold text-white bg-primary hover:bg-primary-dark hover:-translate-y-0.5 hover:shadow-soft transition">Book a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Services ===== -->
+<section id="services" class="py-20 bg-mist">
+  <div class="w-[92%] max-w-[1180px] mx-auto">
+    <div class="reveal text-center max-w-2xl mx-auto mb-12">
+      <span class="text-primary font-bold tracking-[2px] uppercase text-[13px]">What I Offer</span>
+      <h2 class="text-3xl sm:text-[38px] font-extrabold text-ink leading-tight mt-2 mb-3">Services &amp; Treatments</h2>
+      <p class="text-slate-500">Comprehensive primary care for you and your family — delivered with patience, clarity and genuine attention.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="reveal group bg-white rounded-2xl p-7 border border-slate-200 hover:border-primary hover:shadow-soft hover:-translate-y-2 transition duration-300">
+        <div class="w-14 h-14 mb-4 grid place-items-center rounded-xl text-2xl bg-mist text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-stethoscope"></i></div>
+        <h3 class="text-lg font-bold text-ink mb-2">General Consultation</h3>
+        <p class="text-sm text-slate-500">Diagnosis and treatment of everyday illnesses, symptoms and health concerns.</p>
+      </div>
+      <div class="reveal d1 group bg-white rounded-2xl p-7 border border-slate-200 hover:border-primary hover:shadow-soft hover:-translate-y-2 transition duration-300">
+        <div class="w-14 h-14 mb-4 grid place-items-center rounded-xl text-2xl bg-mist text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-heart-pulse"></i></div>
+        <h3 class="text-lg font-bold text-ink mb-2">Chronic Disease Care</h3>
+        <p class="text-sm text-slate-500">Ongoing management of diabetes, blood pressure, cholesterol and thyroid.</p>
+      </div>
+      <div class="reveal d2 group bg-white rounded-2xl p-7 border border-slate-200 hover:border-primary hover:shadow-soft hover:-translate-y-2 transition duration-300">
+        <div class="w-14 h-14 mb-4 grid place-items-center rounded-xl text-2xl bg-mist text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-notes-medical"></i></div>
+        <h3 class="text-lg font-bold text-ink mb-2">Preventive Check-ups</h3>
+        <p class="text-sm text-slate-500">Routine health screening and check-ups to catch problems early.</p>
+      </div>
+      <div class="reveal d3 group bg-white rounded-2xl p-7 border border-slate-200 hover:border-primary hover:shadow-soft hover:-translate-y-2 transition duration-300">
+        <div class="w-14 h-14 mb-4 grid place-items-center rounded-xl text-2xl bg-mist text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-temperature-high"></i></div>
+        <h3 class="text-lg font-bold text-ink mb-2">Acute Illness Care</h3>
+        <p class="text-sm text-slate-500">Prompt treatment for fever, flu, infections, allergies and stomach issues.</p>
+      </div>
+      <div class="reveal group bg-white rounded-2xl p-7 border border-slate-200 hover:border-primary hover:shadow-soft hover:-translate-y-2 transition duration-300">
+        <div class="w-14 h-14 mb-4 grid place-items-center rounded-xl text-2xl bg-mist text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-syringe"></i></div>
+        <h3 class="text-lg font-bold text-ink mb-2">Vaccinations</h3>
+        <p class="text-sm text-slate-500">Adult and travel immunisations to keep you protected year-round.</p>
+      </div>
+      <div class="reveal d1 group bg-white rounded-2xl p-7 border border-slate-200 hover:border-primary hover:shadow-soft hover:-translate-y-2 transition duration-300">
+        <div class="w-14 h-14 mb-4 grid place-items-center rounded-xl text-2xl bg-mist text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-bandage"></i></div>
+        <h3 class="text-lg font-bold text-ink mb-2">Minor Procedures</h3>
+        <p class="text-sm text-slate-500">Wound dressing, stitches, and simple in-clinic procedures done safely.</p>
+      </div>
+      <div class="reveal d2 group bg-white rounded-2xl p-7 border border-slate-200 hover:border-primary hover:shadow-soft hover:-translate-y-2 transition duration-300">
+        <div class="w-14 h-14 mb-4 grid place-items-center rounded-xl text-2xl bg-mist text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-apple-whole"></i></div>
+        <h3 class="text-lg font-bold text-ink mb-2">Diet &amp; Lifestyle</h3>
+        <p class="text-sm text-slate-500">Practical guidance on diet, weight, sleep and healthy daily habits.</p>
+      </div>
+      <div class="reveal d3 group bg-white rounded-2xl p-7 border border-slate-200 hover:border-primary hover:shadow-soft hover:-translate-y-2 transition duration-300">
+        <div class="w-14 h-14 mb-4 grid place-items-center rounded-xl text-2xl bg-mist text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-laptop-medical"></i></div>
+        <h3 class="text-lg font-bold text-ink mb-2">Online Consultation</h3>
+        <p class="text-sm text-slate-500">Video consultations and follow-up advice without leaving home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Stats ===== -->
+<section class="py-20 bg-gradient-to-br from-primary-darker via-primary-dark to-primary text-white">
+  <div class="w-[92%] max-w-[1180px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+    <div class="reveal">
+      <i class="fa-solid fa-award text-3xl text-primary-light mb-2.5"></i>
+      <h3 class="text-4xl sm:text-[46px] font-extrabold"><span class="count" data-target="15">0</span>+</h3>
+      <p class="text-blue-100 font-medium tracking-wide">Years of Experience</p>
+    </div>
+    <div class="reveal d1">
+      <i class="fa-solid fa-user-check text-3xl text-primary-light mb-2.5"></i>
+      <h3 class="text-4xl sm:text-[46px] font-extrabold"><span class="count" data-target="20">0</span>k+</h3>
+      <p class="text-blue-100 font-medium tracking-wide">Patients Treated</p>
+    </div>
+    <div class="reveal d2">
+      <i class="fa-solid fa-face-smile text-3xl text-primary-light mb-2.5"></i>
+      <h3 class="text-4xl sm:text-[46px] font-extrabold"><span class="count" data-target="98">0</span>%</h3>
+      <p class="text-blue-100 font-medium tracking-wide">Patient Satisfaction</p>
+    </div>
+    <div class="reveal d3">
+      <i class="fa-solid fa-star text-3xl text-primary-light mb-2.5"></i>
+      <h3 class="text-4xl sm:text-[46px] font-extrabold"><span class="count" data-target="500">0</span>+</h3>
+      <p class="text-blue-100 font-medium tracking-wide">5-Star Reviews</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why choose me ===== -->
+<section id="why" class="py-20 bg-mist">
+  <div class="w-[92%] max-w-[1180px] mx-auto">
+    <div class="reveal text-center max-w-2xl mx-auto mb-12">
+      <span class="text-primary font-bold tracking-[2px] uppercase text-[13px]">Why Choose Me</span>
+      <h2 class="text-3xl sm:text-[38px] font-extrabold text-ink leading-tight mt-2 mb-3">Why Patients Trust Dr. Mujeeb</h2>
+      <p class="text-slate-500">More than a quick prescription — care that's thorough, honest and built around you.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="reveal bg-white rounded-2xl p-7 border-l-4 border-primary shadow-[0_4px_14px_rgba(0,0,0,.04)] hover:shadow-soft hover:-translate-y-1.5 transition duration-300">
+        <h3 class="flex items-center gap-3 text-lg font-bold text-ink mb-2"><i class="fa-solid fa-comment-medical text-primary text-xl"></i> Unhurried Consultations</h3>
+        <p class="text-sm text-slate-500">Real time to discuss your symptoms, questions and worries — never rushed.</p>
+      </div>
+      <div class="reveal d1 bg-white rounded-2xl p-7 border-l-4 border-primary shadow-[0_4px_14px_rgba(0,0,0,.04)] hover:shadow-soft hover:-translate-y-1.5 transition duration-300">
+        <h3 class="flex items-center gap-3 text-lg font-bold text-ink mb-2"><i class="fa-solid fa-book-medical text-primary text-xl"></i> Evidence-Based Care</h3>
+        <p class="text-sm text-slate-500">Treatment grounded in current medical guidelines — no unnecessary tests or medicines.</p>
+      </div>
+      <div class="reveal d2 bg-white rounded-2xl p-7 border-l-4 border-primary shadow-[0_4px_14px_rgba(0,0,0,.04)] hover:shadow-soft hover:-translate-y-1.5 transition duration-300">
+        <h3 class="flex items-center gap-3 text-lg font-bold text-ink mb-2"><i class="fa-solid fa-calendar-check text-primary text-xl"></i> Easy Online Booking</h3>
+        <p class="text-sm text-slate-500">Book in seconds and choose in-clinic or online — whatever suits you best.</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-7 border-l-4 border-primary shadow-[0_4px_14px_rgba(0,0,0,.04)] hover:shadow-soft hover:-translate-y-1.5 transition duration-300">
+        <h3 class="flex items-center gap-3 text-lg font-bold text-ink mb-2"><i class="fa-solid fa-hand-holding-dollar text-primary text-xl"></i> Transparent Fees</h3>
+        <p class="text-sm text-slate-500">Clear, fair consultation fees with no hidden charges or surprises.</p>
+      </div>
+      <div class="reveal d1 bg-white rounded-2xl p-7 border-l-4 border-primary shadow-[0_4px_14px_rgba(0,0,0,.04)] hover:shadow-soft hover:-translate-y-1.5 transition duration-300">
+        <h3 class="flex items-center gap-3 text-lg font-bold text-ink mb-2"><i class="fa-solid fa-heart-circle-check text-primary text-xl"></i> Continuity of Care</h3>
+        <p class="text-sm text-slate-500">One doctor who knows your history — for you and your whole family.</p>
+      </div>
+      <div class="reveal d2 bg-white rounded-2xl p-7 border-l-4 border-primary shadow-[0_4px_14px_rgba(0,0,0,.04)] hover:shadow-soft hover:-translate-y-1.5 transition duration-300">
+        <h3 class="flex items-center gap-3 text-lg font-bold text-ink mb-2"><i class="fa-solid fa-phone-volume text-primary text-xl"></i> Prompt Follow-ups</h3>
+        <p class="text-sm text-slate-500">Quick check-ins after your visit to make sure you're recovering well.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="py-20">
+  <div class="w-[92%] max-w-[1180px] mx-auto">
+    <div class="reveal text-center max-w-2xl mx-auto mb-12">
+      <span class="text-primary font-bold tracking-[2px] uppercase text-[13px]">Patient Stories</span>
+      <h2 class="text-3xl sm:text-[38px] font-extrabold text-ink leading-tight mt-2 mb-3">What My Patients Say</h2>
+      <p class="text-slate-500">The trust and recovery of my patients is my greatest reward.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="reveal bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-soft hover:-translate-y-1.5 transition duration-300">
+        <i class="fa-solid fa-quote-left text-primary-light text-3xl mb-3"></i>
+        <div class="text-accent mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="italic text-slate-600 mb-5">"Dr. Mujeeb actually listens. He took the time to understand my symptoms and explained everything clearly. Easily the best family doctor I've been to."</p>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="" class="w-12 h-12 rounded-full object-cover">
+          <div><b class="block text-ink">Ayesha K.</b><small class="text-slate-500">Regular Patient</small></div>
+        </div>
+      </div>
+      <div class="reveal d1 bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-soft hover:-translate-y-1.5 transition duration-300">
+        <i class="fa-solid fa-quote-left text-primary-light text-3xl mb-3"></i>
+        <div class="text-accent mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="italic text-slate-600 mb-5">"I've managed my diabetes with Dr. Mujeeb for years. His follow-ups and honest guidance keep me on track. A genuinely caring doctor."</p>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="" class="w-12 h-12 rounded-full object-cover">
+          <div><b class="block text-ink">Bilal A.</b><small class="text-slate-500">Diabetes Patient</small></div>
+        </div>
+      </div>
+      <div class="reveal d2 bg-white rounded-2xl p-8 border border-slate-200 hover:shadow-soft hover:-translate-y-1.5 transition duration-300">
+        <i class="fa-solid fa-quote-left text-primary-light text-3xl mb-3"></i>
+        <div class="text-accent mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="italic text-slate-600 mb-5">"Booked an online consultation for my son's fever — quick, professional and reassuring. Dr. Mujeeb is now our go-to family doctor."</p>
+        <div class="flex items-center gap-3">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80" alt="" class="w-12 h-12 rounded-full object-cover">
+          <div><b class="block text-ink">Hina M.</b><small class="text-slate-500">Parent</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="py-20 bg-gradient-to-r from-accent to-amber-400 text-white text-center">
+  <div class="reveal zoom w-[92%] max-w-[1180px] mx-auto">
+    <h2 class="text-3xl sm:text-[38px] font-extrabold mb-3">Have a Health Concern? Let's Talk.</h2>
+    <p class="text-lg mb-7 text-white/90">Book a consultation with Dr. Mujeeb today — in-clinic or online, whatever works best for you.</p>
+    <a href="tel:+923117654321" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold bg-white text-accent-dark hover:-translate-y-0.5 hover:shadow-glow transition">
+      <i class="fa-solid fa-phone"></i> Call +92 311 7654321
+    </a>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact" class="py-20">
+  <div class="w-[92%] max-w-[1180px] mx-auto">
+    <div class="reveal text-center max-w-2xl mx-auto mb-12">
+      <span class="text-primary font-bold tracking-[2px] uppercase text-[13px]">Get In Touch</span>
+      <h2 class="text-3xl sm:text-[38px] font-extrabold text-ink leading-tight mt-2 mb-3">Book Your Appointment</h2>
+      <p class="text-slate-500">Fill in the form and I'll get back to you, or reach me directly using the details below.</p>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-12">
+      <div class="reveal left space-y-6">
+        <div class="group flex gap-4">
+          <div class="w-12 h-12 shrink-0 grid place-items-center rounded-xl text-xl bg-mist text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-location-dot"></i></div>
+          <div><h4 class="font-bold text-ink">Clinic Location</h4><p class="text-slate-500 text-[15px]">Al-Rahmat Medical Centre, University Road, Faisalabad</p></div>
+        </div>
+        <div class="group flex gap-4">
+          <div class="w-12 h-12 shrink-0 grid place-items-center rounded-xl text-xl bg-mist text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-phone"></i></div>
+          <div><h4 class="font-bold text-ink">Phone / WhatsApp</h4><p class="text-slate-500 text-[15px]">+92 311 7654321</p></div>
+        </div>
+        <div class="group flex gap-4">
+          <div class="w-12 h-12 shrink-0 grid place-items-center rounded-xl text-xl bg-mist text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-envelope"></i></div>
+          <div><h4 class="font-bold text-ink">Email Address</h4><p class="text-slate-500 text-[15px]">contact@drmujeeb.pk</p></div>
+        </div>
+        <div class="group flex gap-4">
+          <div class="w-12 h-12 shrink-0 grid place-items-center rounded-xl text-xl bg-mist text-primary transition group-hover:bg-primary group-hover:text-white"><i class="fa-solid fa-clock"></i></div>
+          <div><h4 class="font-bold text-ink">Clinic Hours</h4><p class="text-slate-500 text-[15px]">Mon–Sat: 5:00 PM – 9:00 PM &nbsp;|&nbsp; Sunday: Closed</p></div>
+        </div>
+      </div>
+
+      <div class="reveal right">
+        <form id="apptForm" class="grid gap-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <input type="text" placeholder="Full Name" required class="px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition">
+            <input type="tel" placeholder="Phone Number" required class="px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition">
+          </div>
+          <input type="email" placeholder="Email Address" required class="px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition">
+          <input type="text" placeholder="Reason for Visit" class="px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition">
+          <textarea rows="4" placeholder="Describe your symptoms or message" required class="px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition"></textarea>
+          <button type="submit" class="px-7 py-3.5 rounded-full font-semibold text-white bg-primary hover:bg-primary-dark hover:-translate-y-0.5 hover:shadow-soft transition">Request Appointment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="bg-ink text-slate-400 pt-16">
+  <div class="w-[92%] max-w-[1180px] mx-auto grid sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-10 pb-10">
+    <div>
+      <a href="#home" class="flex items-center gap-2.5 text-xl font-extrabold text-white mb-4">
+        <span class="w-10 h-10 grid place-items-center rounded-xl text-white bg-gradient-to-br from-primary to-primary-light"><i class="fa-solid fa-user-doctor"></i></span>
+        Dr. Mujeeb
+      </a>
+      <p class="text-[15px] leading-relaxed">General Physician committed to compassionate, evidence-based and accessible care for you and your family — every visit, every day.</p>
+      <div class="flex gap-2 mt-4">
+        <a href="#" class="w-9 h-9 grid place-items-center rounded-full bg-white/10 text-white hover:bg-primary hover:-translate-y-1 transition"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="w-9 h-9 grid place-items-center rounded-full bg-white/10 text-white hover:bg-primary hover:-translate-y-1 transition"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="w-9 h-9 grid place-items-center rounded-full bg-white/10 text-white hover:bg-primary hover:-translate-y-1 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://wa.me/923117654321" class="w-9 h-9 grid place-items-center rounded-full bg-white/10 text-white hover:bg-primary hover:-translate-y-1 transition"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4 class="text-white font-bold text-lg mb-4">Quick Links</h4>
+      <ul class="space-y-2.5">
+        <li><a href="#home" class="hover:text-primary-light transition">Home</a></li>
+        <li><a href="#about" class="hover:text-primary-light transition">About</a></li>
+        <li><a href="#services" class="hover:text-primary-light transition">Services</a></li>
+        <li><a href="#why" class="hover:text-primary-light transition">Why Me</a></li>
+        <li><a href="#contact" class="hover:text-primary-light transition">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold text-lg mb-4">Services</h4>
+      <ul class="space-y-2.5">
+        <li><a href="#services" class="hover:text-primary-light transition">General Consultation</a></li>
+        <li><a href="#services" class="hover:text-primary-light transition">Chronic Disease Care</a></li>
+        <li><a href="#services" class="hover:text-primary-light transition">Preventive Check-ups</a></li>
+        <li><a href="#services" class="hover:text-primary-light transition">Vaccinations</a></li>
+        <li><a href="#services" class="hover:text-primary-light transition">Online Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold text-lg mb-4">Contact Info</h4>
+      <ul class="space-y-2.5">
+        <li><i class="fa-solid fa-location-dot text-primary-light mr-2 w-4"></i>University Road, Faisalabad</li>
+        <li><i class="fa-solid fa-phone text-primary-light mr-2 w-4"></i>+92 311 7654321</li>
+        <li><i class="fa-solid fa-envelope text-primary-light mr-2 w-4"></i>contact@drmujeeb.pk</li>
+        <li><i class="fa-solid fa-clock text-primary-light mr-2 w-4"></i>Mon–Sat: 5:00 – 9:00 PM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10 text-center py-5 text-sm">© 2026 Dr. Mujeeb. All Rights Reserved.</div>
+</footer>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/923117654321" target="_blank" rel="noopener" class="fixed right-5 bottom-5 z-[90] inline-flex items-center gap-2 px-5 py-3.5 rounded-full font-bold text-white bg-[#25D366] hover:bg-[#1ebe5b] shadow-glow animate-pulseSoft">
+  <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+</a>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  // Header shadow on scroll
+  const header = document.getElementById('header');
+  addEventListener('scroll', () => header.classList.toggle('shadow-lg', scrollY > 10));
+
+  // Scroll-reveal animations
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: .18 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Animated stat counters
+  const cObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target;
+        const target = +el.dataset.target;
+        let cur = 0;
+        const step = Math.max(1, Math.ceil(target / 60));
+        const tick = () => {
+          cur += step;
+          if (cur >= target) { el.textContent = target; }
+          else { el.textContent = cur; requestAnimationFrame(tick); }
+        };
+        tick();
+        cObs.unobserve(el);
+      }
+    });
+  }, { threshold: .5 });
+  document.querySelectorAll('.count').forEach(c => cObs.observe(c));
+
+  // Appointment form
+  document.getElementById('apptForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Thank you! Your appointment request has been submitted. Dr. Mujeeb\'s team will contact you shortly.');
+    this.reset();
+  });
+</script>
+</body>
+</html>
