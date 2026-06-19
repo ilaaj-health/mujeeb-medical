@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1781851086841,
+  "projectRoot": "C:\\codex\\valorant-clone\\mujeeb-medical",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {},
+  "hotPaths": [
+    {
+      "path": "index.html",
+      "accessCount": 4,
+      "lastAccessed": 1781851405164,
+      "type": "file"
+    },
+    {
+      "path": "mujeeb 1.jpeg",
+      "accessCount": 1,
+      "lastAccessed": 1781851219828,
+      "type": "file"
+    },
+    {
+      "path": "mujheeb 2.jpeg",
+      "accessCount": 1,
+      "lastAccessed": 1781851220904,
+      "type": "file"
+    },
+    {
+      "path": "mujeeb 3.jpeg",
+      "accessCount": 1,
+      "lastAccessed": 1781851221357,
+      "type": "file"
+    },
+    {
+      "path": ".claude\\serve.cjs",
+      "accessCount": 1,
+      "lastAccessed": 1781851459639,
+      "type": "file"
+    },
+    {
+      "path": ".claude\\launch.json",
+      "accessCount": 1,
+      "lastAccessed": 1781851465831,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
